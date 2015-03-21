@@ -49,7 +49,7 @@ char& Canvas::operator() (size_t col, size_t row)
     // validation
     if (col < 1 || col > cols_ || row < 1 || row > rows_)
     {
-        throw BadIndex("canvas subscript out of bounds");
+        throw BadRange("canvas subscript out of bounds");
     }
     size_t index = (row-1)*cols_ + (col-1);
     return data_[index];

@@ -51,9 +51,9 @@ TEST_CASE("Primitive initialisation", "[Primitive]")
     
     try {
         Line line(0, 0, 10, 10);
-        FAIL("currently only horizontal or vertical lines are supported");
+        FAIL("currently only horizontal and vertical lines are supported");
     } catch (NotImplemented& ex) {
-        REQUIRE(std::string(ex.what())=="currently only horizontal or vertical lines are supported");
+        REQUIRE(std::string(ex.what())=="currently only horizontal and vertical lines are supported");
     }
 }
 

@@ -15,7 +15,7 @@ Canvas::Canvas(size_t cols, size_t rows)
 {
     if (cols_==0 || rows_==0)
     {
-        throw BadIndex("invalid canvas dimension");
+        throw BadRange("invalid canvas dimension");
     }
     data_.resize(cols_*rows_, ' ');
 }

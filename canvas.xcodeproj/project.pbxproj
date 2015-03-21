@@ -89,8 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				33D8587E1ABCD2C400EF2919 /* catch.hpp */,
-				3304358E1ABDE22D00FCFE83 /* UnitTests.h */,
 				3304358F1ABDE45900FCFE83 /* IntegrationTests.h */,
+				3304358E1ABDE22D00FCFE83 /* UnitTests.h */,
 			);
 			path = test;
 			sourceTree = "<group>";

@@ -8,6 +8,9 @@
 
 #include "Line.h"
 
+char const kUsedCell = 'x';
+
+
 Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
 : startX_(startX)
 , startY_(startY)
@@ -16,7 +19,7 @@ Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
 {
     if (startX_ != endX_ && startY_ != endY_)
     {
-        throw NotImplemented("currently only horizontal or vertical lines are supported");
+        throw NotImplemented("currently only horizontal and vertical lines are supported");
     }
 }
 
@@ -27,39 +30,28 @@ Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
 // Primitive
 /*virtual */void Line::draw(Canvas& canvas)
 {
-    // validation
-    if (startX_ < 1 || startX_>canvas.getCols()
-        || startY_ < 1 || startY_>canvas.getRows()
-        || endX_ < 1 || endX_>canvas.getCols()
-        || endY_ < 1 || endY_>canvas.getRows())
-    {
-        throw BadRange("endpoints out of range");
-    }
+    // validation done in Canvas::operator()
     
     // draw line to canvas
     if (startY_ == endY_)
     {
         // horizontal
-        size_t startX = startX_ < endX_ ? startX_ : endX_;
-        size_t endX = endX_ > startX_ ? endX_ : startX_;
-        for (size_t col = startX; col <= endX; ++col)
+        for (size_t col = std::min(startX_, endX_); col <= std::max(startX_, endX_); ++col)
         {
-            canvas(col, startY_) = 'x';
+            canvas(col, startY_) = kUsedCell;
         }
     }
     else if (startX_ == endX_)
     {
         // vertical
-        size_t startY = startY_ < endY_ ? startY_ : endY_;
-        size_t endY = endY_ > startY_ ? endY_ : startY_;
-        for (size_t row = startY; row <= endY; ++row)
+        for (size_t row = std::min(startY_, endY_); row <= std::max(startY_, endY_); ++row)
         {
-            canvas(startX_, row) = 'x';
+            canvas(startX_, row) = kUsedCell;
         }
     }
     else
     {
         // impossible state
-        throw BadRange("currently only horizontal or vertical lines are supported");
+        throw NotImplemented("currently only horizontal and vertical lines are supported");
     }
 }
