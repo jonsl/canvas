@@ -8,14 +8,7 @@
 
 #define RUN_TESTS
 
-#ifdef RUN_TESTS
-#include "TestInitialiser.h"
-int main( int argc, char* const argv[] )
-{
-    TestInitialiser test;
-    return test.run(argc, argv);
-}
-#else
+#ifndef RUN_TESTS
 
 #include "Canvas.h"
 #include "Line.h"
@@ -24,6 +17,18 @@ int main( int argc, char* const argv[] )
 {
     
     return 0;
+}
+
+#else
+
+#define CATCH_CONFIG_RUNNER
+#include "catch.hpp"
+#include "UnitTests.h"
+#include "IntegrationTests.h"
+
+int main( int argc, char* const argv[] )
+{
+    return Catch::Session().run( argc, argv );
 }
 
 #endif

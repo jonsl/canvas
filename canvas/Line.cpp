@@ -16,7 +16,10 @@
 /*virtual */void Line::draw(Canvas& canvas)
 {
     // validation
-    if (startX_>=canvas.getCols() || startY_>=canvas.getRows() || endX_>=canvas.getCols() || endY_>=canvas.getRows())
+    if (startX_ < 1 || startX_>canvas.getCols()
+        || startY_ < 1 || startY_>canvas.getRows()
+        || endX_ < 1 || endX_>canvas.getCols()
+        || endY_ < 1 || endY_>canvas.getRows())
     {
         throw BadRange("endpoints out of range");
     }
@@ -25,7 +28,9 @@
     if (startY_ == endY_)
     {
         // horizontal
-        for (size_t col = startX_; col <= endX_; ++col)
+        size_t startX = startX_ < endX_ ? startX_ : endX_;
+        size_t endX = endX_ > startX_ ? endX_ : startX_;
+        for (size_t col = startX; col <= endX; ++col)
         {
             canvas(col, startY_) = 'x';
         }
@@ -33,7 +38,9 @@
     else if (startX_ == endX_)
     {
         // vertical
-        for (size_t row = startY_; row <= endY_; ++row)
+        size_t startY = startY_ < endY_ ? startY_ : endY_;
+        size_t endY = endY_ > startY_ ? endY_ : startY_;
+        for (size_t row = startY; row <= endY; ++row)
         {
             canvas(startX_, row) = 'x';
         }

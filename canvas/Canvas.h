@@ -60,11 +60,12 @@ inline
 char& Canvas::operator() (size_t col, size_t row)
 {
     // validation
-    if (col >= cols_ || row >= rows_)
+    if (col < 1 || col > cols_ || row < 1 || row > rows_)
     {
         throw BadIndex("canvas subscript out of bounds");
     }
-    return grid_[row*cols_ + col];
+    size_t index = (row-1)*cols_ + (col-1);
+    return grid_[index];
 }
 
 inline
