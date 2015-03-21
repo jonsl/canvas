@@ -75,6 +75,7 @@
 		33D858751ABCD26E00EF2919 /* canvas */ = {
 			isa = PBXGroup;
 			children = (
+				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
 				33D858921ABCE25200EF2919 /* Canvas.h */,
 				337C563D1ABD664200512EBB /* Exception.h */,
 				3330EB461ABD941D0012EA2A /* Line.cpp */,
@@ -83,7 +84,6 @@
 				3330EB391ABD80B20012EA2A /* Primitive.h */,
 				3330EB481ABD949B0012EA2A /* Rectangle.cpp */,
 				3330EB3B1ABD84880012EA2A /* Rectangle.h */,
-				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
 			);
 			path = canvas;
 			sourceTree = "<group>";

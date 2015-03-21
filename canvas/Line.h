@@ -14,19 +14,19 @@
 class Line : public Primitive
 {
 public:
-    Line(unsigned startX, unsigned startY, unsigned endX, unsigned endY);
+    Line(size_t startX, size_t startY, size_t endX, size_t endY);
     virtual ~Line();
     
     // Primitive
     virtual void draw(Canvas& canvas);
     
 private:
-    unsigned startX_, startY_;
-    unsigned endX_, endY_;
+    size_t startX_, startY_;
+    size_t endX_, endY_;
 };
 
 inline
-Line::Line(unsigned startX, unsigned startY, unsigned endX, unsigned endY)
+Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
 : startX_(startX)
 , startY_(startY)
 , endX_(endX)

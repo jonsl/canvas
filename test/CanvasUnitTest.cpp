@@ -12,22 +12,22 @@
 TEST_CASE("Canvas initialisation", "[Canvas]")
 {
     try {
-        Canvas canvas3x2(3, 2);
-        REQUIRE(canvas3x2.getState() == "-----\n|   |\n|   |\n-----\n");
+        Canvas canvas(3, 2);
+        REQUIRE(canvas.getState() == "-----\n|   |\n|   |\n-----\n");
     } catch (std::exception& ex) {
-        REQUIRE(0);
+        FAIL("exception " << ex.what());
     }
-
+    
     try {
-        Canvas canvas2x3(2, 3);
-        REQUIRE(canvas2x3.getState() == "----\n|  |\n|  |\n|  |\n----\n");
+        Canvas canvas(2, 3);
+        REQUIRE(canvas.getState() == "----\n|  |\n|  |\n|  |\n----\n");
     } catch (std::exception& ex) {
-        REQUIRE(0);
+        FAIL("exception " << ex.what());
     }
-
+    
     try {
-        Canvas canvas0x0(0, 0);
-        REQUIRE(0);
+        Canvas canvas(0, 0);
+        FAIL("zero sized canvas not allowed");
     } catch (std::exception& ex) {
         REQUIRE(std::string(ex.what())=="invalid canvas dimension");
     }

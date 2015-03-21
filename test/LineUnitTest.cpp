@@ -14,18 +14,18 @@ TEST_CASE("Line initialisation", "[Line]")
     try {
         Line line(0, 0, 10, 0);
     } catch (std::exception& ex) {
-        REQUIRE(0);
+        FAIL("exception " << ex.what());
     }
     
     try {
         Line line(0, 0, 0, 10);
     } catch (std::exception& ex) {
-        REQUIRE(0);
+        FAIL("exception " << ex.what());
     }
     
     try {
         Line line(0, 0, 10, 10);
-        REQUIRE(0);
+        FAIL("lines not horizontal or vertical are not allowed");
     } catch (NotImplemented& ex) {
         REQUIRE(std::string(ex.what())=="currently only horizontal or vertical lines are supported");
     }

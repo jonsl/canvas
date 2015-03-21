@@ -17,11 +17,10 @@
 class Canvas
 {
 public:
-    Canvas(unsigned cols, unsigned rows);
+    Canvas(size_t cols, size_t rows);
     virtual ~Canvas();
     
-    char& operator() (unsigned col, unsigned row);
-    void reset();
+    char& operator() (size_t col, size_t row);
     std::string getState();
 
 private:
@@ -31,7 +30,7 @@ private:
 };
 
 inline
-Canvas::Canvas(unsigned cols, unsigned rows)
+Canvas::Canvas(size_t cols, size_t rows)
 : cols_(cols)
 , rows_(rows)
 , grid_()
@@ -44,19 +43,14 @@ Canvas::Canvas(unsigned cols, unsigned rows)
 }
 
 inline
-char& Canvas::operator() (unsigned col, unsigned row)
+char& Canvas::operator() (size_t col, size_t row)
 {
+    // validation
     if (col >= cols_ || row >= rows_)
     {
         throw BadIndex("canvas subscript out of bounds");
     }
-    return grid_[cols_*row + col];
-}
-
-inline
-void Canvas::reset()
-{
-    std::fill(grid_.begin(), grid_.end(), ' ');
+    return grid_[row*cols_ + col];
 }
 
 inline
