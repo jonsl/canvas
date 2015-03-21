@@ -20,12 +20,14 @@ public:
     Canvas(size_t cols, size_t rows);
     virtual ~Canvas();
     
+    size_t getCols();
+    size_t getRows();
     char& operator() (size_t col, size_t row);
     std::string getState();
-
+    
 private:
-    size_t const cols_;
-    size_t const rows_;
+    size_t cols_;
+    size_t rows_;
     std::vector<char> grid_;
 };
 
@@ -35,11 +37,23 @@ Canvas::Canvas(size_t cols, size_t rows)
 , rows_(rows)
 , grid_()
 {
-    if (rows_==0 || cols_==0)
+    if (cols_==0 || rows_==0)
     {
         throw BadIndex("invalid canvas dimension");
     }
-    grid_.resize(rows_*cols_, ' ');
+    grid_.resize(cols_*rows_, ' ');
+}
+
+inline
+size_t Canvas::getCols()
+{
+    return cols_;
+}
+
+inline
+size_t Canvas::getRows()
+{
+    return rows_;
 }
 
 inline
@@ -63,7 +77,7 @@ std::string Canvas::getState()
         result += '|';
         for (size_t col = 0; col < cols_; ++col)
         {
-            char const& cell = grid_[cols_*row + col];
+            char const& cell = grid_[row*cols_ + col];
             result += cell;
         }
         result += "|\n";

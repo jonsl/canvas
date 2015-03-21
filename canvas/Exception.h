@@ -13,7 +13,16 @@ class BadIndex : public std::runtime_error
 {
 public:
     BadIndex(std::string what)
-        : std::runtime_error(what)
+    : std::runtime_error(what)
+    {
+    }
+};
+
+class BadRange : public std::runtime_error
+{
+public:
+    BadRange(std::string what)
+    : std::runtime_error(what)
     {
     }
 };
