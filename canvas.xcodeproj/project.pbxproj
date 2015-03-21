@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3330EB411ABD916B0012EA2A /* CanvasUnitTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 337C563E1ABD68B500512EBB /* CanvasUnitTest.cpp */; };
+		3330EB421ABD916B0012EA2A /* LineUnitTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB3C1ABD85070012EA2A /* LineUnitTest.cpp */; };
+		3330EB471ABD941D0012EA2A /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB461ABD941D0012EA2A /* Line.cpp */; };
+		3330EB491ABD949B0012EA2A /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* Rectangle.cpp */; };
+		3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB4A1ABD95B50012EA2A /* Canvas.cpp */; };
 		33D858771ABCD26E00EF2919 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D858761ABCD26E00EF2919 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,9 +28,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3330EB391ABD80B20012EA2A /* Primitive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Primitive.h; sourceTree = "<group>"; };
+		3330EB3A1ABD810C0012EA2A /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		3330EB3B1ABD84880012EA2A /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		3330EB3C1ABD85070012EA2A /* LineUnitTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LineUnitTest.cpp; sourceTree = "<group>"; };
+		3330EB441ABD92400012EA2A /* TestInitialiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestInitialiser.h; sourceTree = "<group>"; };
+		3330EB461ABD941D0012EA2A /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		3330EB481ABD949B0012EA2A /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		3330EB4A1ABD95B50012EA2A /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
 		337C563D1ABD664200512EBB /* Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
-		337C563E1ABD68B500512EBB /* CanvasUnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasUnitTest.h; sourceTree = "<group>"; };
-		337C563F1ABD69AD00512EBB /* TestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBase.h; sourceTree = "<group>"; };
+		337C563E1ABD68B500512EBB /* CanvasUnitTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CanvasUnitTest.cpp; sourceTree = "<group>"; };
 		33D858731ABCD26E00EF2919 /* canvas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = canvas; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D858761ABCD26E00EF2919 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33D8587E1ABCD2C400EF2919 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
@@ -64,8 +76,14 @@
 			isa = PBXGroup;
 			children = (
 				33D858921ABCE25200EF2919 /* Canvas.h */,
-				33D858761ABCD26E00EF2919 /* main.cpp */,
 				337C563D1ABD664200512EBB /* Exception.h */,
+				3330EB461ABD941D0012EA2A /* Line.cpp */,
+				3330EB3A1ABD810C0012EA2A /* Line.h */,
+				33D858761ABCD26E00EF2919 /* main.cpp */,
+				3330EB391ABD80B20012EA2A /* Primitive.h */,
+				3330EB481ABD949B0012EA2A /* Rectangle.cpp */,
+				3330EB3B1ABD84880012EA2A /* Rectangle.h */,
+				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
 			);
 			path = canvas;
 			sourceTree = "<group>";
@@ -73,9 +91,10 @@
 		33D8587D1ABCD2C400EF2919 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				337C563E1ABD68B500512EBB /* CanvasUnitTest.cpp */,
 				33D8587E1ABCD2C400EF2919 /* catch.hpp */,
-				337C563E1ABD68B500512EBB /* CanvasUnitTest.h */,
-				337C563F1ABD69AD00512EBB /* TestBase.h */,
+				3330EB3C1ABD85070012EA2A /* LineUnitTest.cpp */,
+				3330EB441ABD92400012EA2A /* TestInitialiser.h */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -136,7 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3330EB411ABD916B0012EA2A /* CanvasUnitTest.cpp in Sources */,
+				3330EB471ABD941D0012EA2A /* Line.cpp in Sources */,
+				3330EB421ABD916B0012EA2A /* LineUnitTest.cpp in Sources */,
+				3330EB491ABD949B0012EA2A /* Rectangle.cpp in Sources */,
 				33D858771ABCD26E00EF2919 /* main.cpp in Sources */,
+				3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

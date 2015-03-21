@@ -6,23 +6,24 @@
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#define RUN_TESTS 1
-#if (RUN_TESTS)
-#   include "TestBase.h"
-#endif
+#define RUN_TESTS
+
+#ifdef RUN_TESTS
+#include "TestInitialiser.h"
+int main( int argc, char* const argv[] )
+{
+    TestInitialiser test;
+    return test.run(argc, argv);
+}
+#else
 
 #include "Canvas.h"
-
+#include "Line.h"
 
 int main( int argc, char* const argv[] )
 {
-#if (RUN_TESTS)
-    Catch::Session session;
-    int result = session.run( argc, argv );
-    return result;
-#else
-
+    
     return 0;
-#endif
 }
 
+#endif

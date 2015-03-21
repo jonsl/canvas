@@ -9,11 +9,20 @@
 #ifndef canvas_Exception_h
 #define canvas_Exception_h
 
-class BadIndexException : public std::runtime_error
+class BadIndex : public std::runtime_error
 {
 public:
-    BadIndexException()
-        : std::runtime_error("BadIndexException")
+    BadIndex(std::string what)
+        : std::runtime_error(what)
+    {
+    }
+};
+
+class NotImplemented : public std::runtime_error
+{
+public:
+    NotImplemented(std::string what)
+    : std::runtime_error(what)
     {
     }
 };
