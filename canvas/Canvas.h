@@ -28,21 +28,8 @@ public:
 private:
     size_t cols_;
     size_t rows_;
-    std::vector<char> grid_;
+    std::vector<char> data_;
 };
-
-inline
-Canvas::Canvas(size_t cols, size_t rows)
-: cols_(cols)
-, rows_(rows)
-, grid_()
-{
-    if (cols_==0 || rows_==0)
-    {
-        throw BadIndex("invalid canvas dimension");
-    }
-    grid_.resize(cols_*rows_, ' ');
-}
 
 inline
 size_t Canvas::getCols()
@@ -65,26 +52,7 @@ char& Canvas::operator() (size_t col, size_t row)
         throw BadIndex("canvas subscript out of bounds");
     }
     size_t index = (row-1)*cols_ + (col-1);
-    return grid_[index];
-}
-
-inline
-std::string Canvas::getState()
-{
-    std::string result;
-    result += std::string(cols_+2, '-') + '\n';
-    for (size_t row = 0; row < rows_; ++row)
-    {
-        result += '|';
-        for (size_t col = 0; col < cols_; ++col)
-        {
-            char const& cell = grid_[row*cols_ + col];
-            result += cell;
-        }
-        result += "|\n";
-    }
-    result += std::string(cols_+2, '-') + '\n';
-    return result;
+    return data_[index];
 }
 
 #endif

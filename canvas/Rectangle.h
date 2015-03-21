@@ -25,14 +25,4 @@ private:
     unsigned endX_, endY_;
 };
 
-inline
-Rectangle::Rectangle(unsigned startX, unsigned startY, unsigned endX, unsigned endY)
-: startX_(startX)
-, startY_(startY)
-, endX_(endX)
-, endY_(endY)
-{
-    // start and end points can be the same point
-}
-
 #endif

@@ -8,6 +8,18 @@
 
 #include "Line.h"
 
+Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
+: startX_(startX)
+, startY_(startY)
+, endX_(endX)
+, endY_(endY)
+{
+    if (startX_ != endX_ && startY_ != endY_)
+    {
+        throw NotImplemented("currently only horizontal or vertical lines are supported");
+    }
+}
+
 /*virtual */Line::~Line()
 {
 }

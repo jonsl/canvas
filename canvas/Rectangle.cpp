@@ -9,6 +9,15 @@
 #include "Rectangle.h"
 #include "Line.h"
 
+Rectangle::Rectangle(unsigned startX, unsigned startY, unsigned endX, unsigned endY)
+: startX_(startX)
+, startY_(startY)
+, endX_(endX)
+, endY_(endY)
+{
+    // start and end points can be the same point
+}
+
 /*virtual */Rectangle::~Rectangle()
 {
 }
