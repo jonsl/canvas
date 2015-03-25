@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3330EB471ABD941D0012EA2A /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB461ABD941D0012EA2A /* Line.cpp */; };
-		3330EB491ABD949B0012EA2A /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* Rectangle.cpp */; };
+		1A4419501AC30B8E005DF9EA /* Tokeniser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A44194E1AC30B8E005DF9EA /* Tokeniser.cpp */; };
+		3330EB471ABD941D0012EA2A /* LineCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB461ABD941D0012EA2A /* LineCommand.cpp */; };
+		3330EB491ABD949B0012EA2A /* RectangleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */; };
 		3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB4A1ABD95B50012EA2A /* Canvas.cpp */; };
+		33CCA70D1AC349A200013E6F /* CanvasCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CCA70B1AC349A200013E6F /* CanvasCell.cpp */; };
 		33D858771ABCD26E00EF2919 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D858761ABCD26E00EF2919 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,15 +28,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A4419491AC2FE37005DF9EA /* CanvasCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCommand.h; sourceTree = "<group>"; };
+		1A44194E1AC30B8E005DF9EA /* Tokeniser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tokeniser.cpp; sourceTree = "<group>"; };
+		1A44194F1AC30B8E005DF9EA /* Tokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tokeniser.h; sourceTree = "<group>"; };
 		3304358E1ABDE22D00FCFE83 /* UnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
 		3304358F1ABDE45900FCFE83 /* IntegrationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntegrationTests.h; sourceTree = "<group>"; };
-		3330EB391ABD80B20012EA2A /* Primitive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Primitive.h; sourceTree = "<group>"; };
-		3330EB3A1ABD810C0012EA2A /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		3330EB3B1ABD84880012EA2A /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
-		3330EB461ABD941D0012EA2A /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
-		3330EB481ABD949B0012EA2A /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		3330EB3A1ABD810C0012EA2A /* LineCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineCommand.h; sourceTree = "<group>"; };
+		3330EB3B1ABD84880012EA2A /* RectangleCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RectangleCommand.h; sourceTree = "<group>"; };
+		3330EB461ABD941D0012EA2A /* LineCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineCommand.cpp; sourceTree = "<group>"; };
+		3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectangleCommand.cpp; sourceTree = "<group>"; };
 		3330EB4A1ABD95B50012EA2A /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
 		337C563D1ABD664200512EBB /* Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		33CCA70B1AC349A200013E6F /* CanvasCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CanvasCell.cpp; sourceTree = "<group>"; };
+		33CCA70C1AC349A200013E6F /* CanvasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCell.h; sourceTree = "<group>"; };
 		33D858731ABCD26E00EF2919 /* canvas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = canvas; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D858761ABCD26E00EF2919 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33D8587E1ABCD2C400EF2919 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
@@ -74,13 +80,17 @@
 			children = (
 				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
 				33D858921ABCE25200EF2919 /* Canvas.h */,
+				33CCA70B1AC349A200013E6F /* CanvasCell.cpp */,
+				33CCA70C1AC349A200013E6F /* CanvasCell.h */,
+				1A4419491AC2FE37005DF9EA /* CanvasCommand.h */,
 				337C563D1ABD664200512EBB /* Exception.h */,
-				3330EB461ABD941D0012EA2A /* Line.cpp */,
-				3330EB3A1ABD810C0012EA2A /* Line.h */,
+				3330EB461ABD941D0012EA2A /* LineCommand.cpp */,
+				3330EB3A1ABD810C0012EA2A /* LineCommand.h */,
 				33D858761ABCD26E00EF2919 /* main.cpp */,
-				3330EB391ABD80B20012EA2A /* Primitive.h */,
-				3330EB481ABD949B0012EA2A /* Rectangle.cpp */,
-				3330EB3B1ABD84880012EA2A /* Rectangle.h */,
+				3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */,
+				3330EB3B1ABD84880012EA2A /* RectangleCommand.h */,
+				1A44194E1AC30B8E005DF9EA /* Tokeniser.cpp */,
+				1A44194F1AC30B8E005DF9EA /* Tokeniser.h */,
 			);
 			path = canvas;
 			sourceTree = "<group>";
@@ -151,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3330EB471ABD941D0012EA2A /* Line.cpp in Sources */,
-				3330EB491ABD949B0012EA2A /* Rectangle.cpp in Sources */,
+				1A4419501AC30B8E005DF9EA /* Tokeniser.cpp in Sources */,
+				3330EB471ABD941D0012EA2A /* LineCommand.cpp in Sources */,
+				3330EB491ABD949B0012EA2A /* RectangleCommand.cpp in Sources */,
+				33CCA70D1AC349A200013E6F /* CanvasCell.cpp in Sources */,
 				33D858771ABCD26E00EF2919 /* main.cpp in Sources */,
 				3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */,
 			);

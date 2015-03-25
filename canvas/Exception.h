@@ -6,25 +6,21 @@
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#ifndef canvas_Exception_h
-#define canvas_Exception_h
+#ifndef __canvas__Exception__
+#define __canvas__Exception__
 
 class BadRange : public std::runtime_error
 {
 public:
     BadRange(std::string what)
-    : std::runtime_error(what)
-    {
-    }
+        : std::runtime_error(what) { }
 };
 
 class NotImplemented : public std::runtime_error
 {
 public:
     NotImplemented(std::string what)
-    : std::runtime_error(what)
-    {
-    }
+        : std::runtime_error(what) { }
 };
 
-#endif
+#endif /* defined(__canvas__Exception__) */

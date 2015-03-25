@@ -10,8 +10,8 @@
 #define canvas_UnitTests_h
 
 #include "Canvas.h"
-#include "Line.h"
-#include "Rectangle.h"
+#include "LineCommand.h"
+#include "RectangleCommand.h"
 
 TEST_CASE("Canvas initialisation", "[Canvas]")
 {
@@ -38,19 +38,19 @@ TEST_CASE("Canvas initialisation", "[Canvas]")
 TEST_CASE("Primitive initialisation", "[Primitive]")
 {
     try {
-        Line line(0, 0, 10, 0);
+        LineCommand line(0, 0, 10, 0);
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
     }
     
     try {
-        Line line(0, 0, 0, 10);
+        LineCommand line(0, 0, 0, 10);
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
     }
     
     try {
-        Line line(0, 0, 10, 10);
+        LineCommand line(0, 0, 10, 10);
         FAIL("currently only horizontal and vertical lines are supported");
     } catch (NotImplemented& ex) {
         REQUIRE(std::string(ex.what())=="currently only horizontal and vertical lines are supported");
@@ -74,8 +74,8 @@ TEST_CASE("Primitive drawing to canvas", "[Primitive]")
     SECTION("draw horizonal line")
     {
         try {
-            Line line(1, 2, 6, 2);
-            line.draw(canvas);
+            LineCommand line(1, 2, 6, 2);
+            line.execute(canvas);
             std::string str = canvas.getState();
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
@@ -90,8 +90,8 @@ TEST_CASE("Primitive drawing to canvas", "[Primitive]")
     SECTION("draw vertical line")
     {
         try {
-            Line line1(6, 3, 6, 4);
-            line1.draw(canvas);
+            LineCommand line(6, 3, 6, 4);
+            line.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
                                             "|                    |\n"
@@ -105,8 +105,8 @@ TEST_CASE("Primitive drawing to canvas", "[Primitive]")
     SECTION("draw rectangle")
     {
         try {
-            Rectangle rectangle(16, 1, 20, 3);
-            rectangle.draw(canvas);
+            RectangleCommand rectangle(16, 1, 20, 3);
+            rectangle.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|               xxxxx|\n"
                                             "|               x   x|\n"
@@ -120,24 +120,24 @@ TEST_CASE("Primitive drawing to canvas", "[Primitive]")
     SECTION("draw lines and rectangle")
     {
         try {
-            Line line1(6, 3, 6, 4);
-            line1.draw(canvas);
+            LineCommand line1(6, 3, 6, 4);
+            line1.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
                                             "|                    |\n"
                                             "|     x              |\n"
                                             "|     x              |\n"
                                             "----------------------\n");
-            Line line2(1, 2, 6, 2);
-            line2.draw(canvas);
+            LineCommand line2(1, 2, 6, 2);
+            line2.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
                                             "|xxxxxx              |\n"
                                             "|     x              |\n"
                                             "|     x              |\n"
                                             "----------------------\n");
-            Rectangle rectangle(16, 1, 20, 3);
-            rectangle.draw(canvas);
+            RectangleCommand rectangle(16, 1, 20, 3);
+            rectangle.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|               xxxxx|\n"
                                             "|xxxxxx         x   x|\n"

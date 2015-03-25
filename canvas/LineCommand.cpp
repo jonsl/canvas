@@ -1,21 +1,20 @@
 //
-//  Line.cpp
+//  LineCommand.cpp
 //  canvas
 //
 //  Created by Jonathan Slater on 21/03/2015.
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#include "Line.h"
+#include "LineCommand.h"
+#include <memory>
 
-char const kUsedCell = 'x';
-
-
-Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
-: startX_(startX)
-, startY_(startY)
-, endX_(endX)
-, endY_(endY)
+LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
+    : CanvasCommand()
+    , startX_(startX)
+    , startY_(startY)
+    , endX_(endX)
+    , endY_(endY)
 {
     if (startX_ != endX_ && startY_ != endY_)
     {
@@ -23,12 +22,12 @@ Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
     }
 }
 
-/*virtual */Line::~Line()
+/*virtual */LineCommand::~LineCommand()
 {
 }
 
 // Primitive
-/*virtual */void Line::draw(Canvas& canvas)
+/*virtual */void LineCommand::execute(Canvas& canvas)
 {
     // validation done in Canvas::operator()
     
@@ -38,7 +37,7 @@ Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
         // horizontal
         for (size_t col = std::min(startX_, endX_); col <= std::max(startX_, endX_); ++col)
         {
-            canvas(col, startY_) = kUsedCell;
+            canvas(col, startY_) = CanvasCell('x');
         }
     }
     else if (startX_ == endX_)
@@ -46,7 +45,7 @@ Line::Line(size_t startX, size_t startY, size_t endX, size_t endY)
         // vertical
         for (size_t row = std::min(startY_, endY_); row <= std::max(startY_, endY_); ++row)
         {
-            canvas(startX_, row) = kUsedCell;
+            canvas(startX_, row) = CanvasCell('x');
         }
     }
     else

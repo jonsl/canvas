@@ -10,9 +10,6 @@
 
 #ifndef RUN_TESTS
 
-#include "Canvas.h"
-#include "Line.h"
-
 int main( int argc, char* const argv[] )
 {
     

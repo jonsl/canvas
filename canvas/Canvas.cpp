@@ -9,9 +9,9 @@
 #include "Canvas.h"
 
 Canvas::Canvas(size_t cols, size_t rows)
-: cols_(cols)
-, rows_(rows)
-, data_()
+    : cols_(cols)
+    , rows_(rows)
+    , data_()
 {
     if (cols_==0 || rows_==0)
     {
@@ -33,8 +33,8 @@ std::string Canvas::getState()
         result += '|';
         for (size_t col = 0; col < cols_; ++col)
         {
-            char const& cell = data_[row*cols_ + col];
-            result += cell;
+            CanvasCell const& cell = data_[row*cols_ + col];
+            result += cell.getColour();
         }
         result += "|\n";
     }
