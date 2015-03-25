@@ -10,7 +10,6 @@
 #define __canvas__LineCommand__
 
 #include "CanvasCommand.h"
-#include <memory>
 
 class LineCommand : public CanvasCommand
 {

@@ -7,7 +7,6 @@
 //
 
 #include "LineCommand.h"
-#include <memory>
 
 LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
     : CanvasCommand()
@@ -26,7 +25,7 @@ LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
 {
 }
 
-// Primitive
+// CanvasCommand
 /*virtual */void LineCommand::execute(Canvas& canvas)
 {
     // validation done in Canvas::operator()

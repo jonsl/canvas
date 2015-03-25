@@ -12,6 +12,7 @@
 		3330EB491ABD949B0012EA2A /* RectangleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */; };
 		3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB4A1ABD95B50012EA2A /* Canvas.cpp */; };
 		33CCA70D1AC349A200013E6F /* CanvasCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CCA70B1AC349A200013E6F /* CanvasCell.cpp */; };
+		33CCA7101AC351B600013E6F /* FillCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CCA70E1AC351B600013E6F /* FillCommand.cpp */; };
 		33D858771ABCD26E00EF2919 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D858761ABCD26E00EF2919 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		337C563D1ABD664200512EBB /* Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		33CCA70B1AC349A200013E6F /* CanvasCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CanvasCell.cpp; sourceTree = "<group>"; };
 		33CCA70C1AC349A200013E6F /* CanvasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCell.h; sourceTree = "<group>"; };
+		33CCA70E1AC351B600013E6F /* FillCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FillCommand.cpp; sourceTree = "<group>"; };
+		33CCA70F1AC351B600013E6F /* FillCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillCommand.h; sourceTree = "<group>"; };
 		33D858731ABCD26E00EF2919 /* canvas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = canvas; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D858761ABCD26E00EF2919 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33D8587E1ABCD2C400EF2919 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				33CCA70C1AC349A200013E6F /* CanvasCell.h */,
 				1A4419491AC2FE37005DF9EA /* CanvasCommand.h */,
 				337C563D1ABD664200512EBB /* Exception.h */,
+				33CCA70E1AC351B600013E6F /* FillCommand.cpp */,
+				33CCA70F1AC351B600013E6F /* FillCommand.h */,
 				3330EB461ABD941D0012EA2A /* LineCommand.cpp */,
 				3330EB3A1ABD810C0012EA2A /* LineCommand.h */,
 				33D858761ABCD26E00EF2919 /* main.cpp */,
@@ -166,6 +171,7 @@
 				3330EB491ABD949B0012EA2A /* RectangleCommand.cpp in Sources */,
 				33CCA70D1AC349A200013E6F /* CanvasCell.cpp in Sources */,
 				33D858771ABCD26E00EF2919 /* main.cpp in Sources */,
+				33CCA7101AC351B600013E6F /* FillCommand.cpp in Sources */,
 				3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

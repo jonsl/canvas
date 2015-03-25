@@ -24,6 +24,7 @@ public:
     size_t getCols();
     size_t getRows();
     CanvasCell& operator() (size_t col, size_t row);
+    CanvasCell& operator[](size_t const index);
     std::string getState();
     
 private:
@@ -53,6 +54,16 @@ CanvasCell& Canvas::operator() (size_t col, size_t row)
         throw BadRange("canvas subscript out of bounds");
     }
     size_t index = (row-1)*cols_ + (col-1);
+    return data_[index];
+}
+
+inline
+CanvasCell& Canvas::operator[](size_t const index)
+{
+    if (index >= cols_ * rows_)
+    {
+        throw BadRange("canvas subscript out of bounds");
+    }
     return data_[index];
 }
 

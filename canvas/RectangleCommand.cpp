@@ -23,7 +23,7 @@ RectangleCommand::RectangleCommand(unsigned startX, unsigned startY, unsigned en
 {
 }
 
-// Primitive
+// CanvasCommand
 /*virtual */void RectangleCommand::execute(Canvas& canvas)
 {
     LineCommand(startX_, startY_, endX_, startY_).execute(canvas);

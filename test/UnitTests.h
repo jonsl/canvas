@@ -12,6 +12,7 @@
 #include "Canvas.h"
 #include "LineCommand.h"
 #include "RectangleCommand.h"
+#include "FillCommand.h"
 
 TEST_CASE("Canvas initialisation", "[Canvas]")
 {
@@ -35,29 +36,44 @@ TEST_CASE("Canvas initialisation", "[Canvas]")
     }
 }
 
-TEST_CASE("Primitive initialisation", "[Primitive]")
+TEST_CASE("CanvasCommand initialisation", "[CanvasCommand]")
 {
+    Canvas canvas(20, 4);
     try {
-        LineCommand line(0, 0, 10, 0);
+        LineCommand line(1, 1, 10, 1);
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
     }
     
     try {
-        LineCommand line(0, 0, 0, 10);
+        LineCommand line(1, 1, 1, 10);
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
     }
     
     try {
-        LineCommand line(0, 0, 10, 10);
+        LineCommand line(1, 1, 10, 10);
         FAIL("currently only horizontal and vertical lines are supported");
     } catch (NotImplemented& ex) {
         REQUIRE(std::string(ex.what())=="currently only horizontal and vertical lines are supported");
     }
+    try {
+        LineCommand line(0, 0, 10, 0);
+        line.execute(canvas);
+        FAIL("canvas subscript out of bounds");
+    } catch (BadRange& ex) {
+        REQUIRE(std::string(ex.what())=="canvas subscript out of bounds");
+    }
+    try {
+        FillCommand fill(0, 0, CanvasCell());
+        fill.execute(canvas);
+        FAIL("canvas subscript out of bounds");
+    } catch (BadRange& ex) {
+        REQUIRE(std::string(ex.what())=="canvas subscript out of bounds");
+    }
 }
 
-TEST_CASE("Primitive drawing to canvas", "[Primitive]")
+TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
 {
     Canvas canvas(20, 4);
     try {
@@ -117,6 +133,22 @@ TEST_CASE("Primitive drawing to canvas", "[Primitive]")
             FAIL("exception " << ex.what());
         }
     }
+    SECTION("draw fill")
+    {
+        try {
+//            FillCommand fill(5, 3, CanvasCell('o'));
+            FillCommand fill(1, 4, CanvasCell('o'));
+            fill.execute(canvas);
+            REQUIRE(canvas.getState() ==    "----------------------\n"
+                                            "|oooooooooooooooooooo|\n"
+                                            "|oooooooooooooooooooo|\n"
+                                            "|oooooooooooooooooooo|\n"
+                                            "|oooooooooooooooooooo|\n"
+                                            "----------------------\n");
+        } catch (std::exception& ex) {
+            FAIL("exception " << ex.what());
+        }
+    }
     SECTION("draw lines and rectangle")
     {
         try {
@@ -143,6 +175,14 @@ TEST_CASE("Primitive drawing to canvas", "[Primitive]")
                                             "|xxxxxx         x   x|\n"
                                             "|     x         xxxxx|\n"
                                             "|     x              |\n"
+                                            "----------------------\n");
+            FillCommand fill(10, 3, CanvasCell('o'));
+            fill.execute(canvas);
+            REQUIRE(canvas.getState() ==    "----------------------\n"
+                                            "|oooooooooooooooxxxxx|\n"
+                                            "|xxxxxxooooooooox   x|\n"
+                                            "|     xoooooooooxxxxx|\n"
+                                            "|     xoooooooooooooo|\n"
                                             "----------------------\n");
         } catch (std::exception& ex) {
             FAIL("exception " << ex.what());
