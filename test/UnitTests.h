@@ -136,8 +136,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw fill")
     {
         try {
-//            FillCommand fill(5, 3, CanvasCell('o'));
-            FillCommand fill(1, 4, CanvasCell('o'));
+            FillCommand fill(5, 3, CanvasCell('o'));
             fill.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|oooooooooooooooooooo|\n"

@@ -10,10 +10,10 @@
 #include <deque>
 
 FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
-: CanvasCommand()
-, startX_(startX)
-, startY_(startY)
-, canvasCell_(canvasCell)
+    : CanvasCommand()
+    , startX_(startX)
+    , startY_(startY)
+    , canvasCell_(canvasCell)
 {
 }
 
@@ -27,26 +27,26 @@ FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
     size_t start = (startY_-1)*canvas.getCols() + (startX_-1);
     std::deque<size_t> frontier;
     frontier.push_back(start);
-    canvas[start] = CanvasCell('o');
+    canvas[start] = canvasCell_;
     while (frontier.size() > 0)
     {
         size_t current = frontier.front();
         frontier.pop_front();
         size_t neighbours[4];
-        size_t numNeighbours = getNeighbours(canvas, current, neighbours);
+        size_t numNeighbours = getCellNeighbours(canvas, current, neighbours);
         for (size_t i = 0; i < numNeighbours; ++i)
         {
             size_t next = neighbours[i];
             if (canvas[next].getColour() == ' ')
             {
                 frontier.push_back(next);
-                canvas[next] = CanvasCell('o');
+                canvas[next] = canvasCell_;
             }
         }
     }
 }
 
-size_t FillCommand::getNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[4]) const
+size_t FillCommand::getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[4]) const
 {
     if (index >= canvas.getCols() * canvas.getRows())
     {

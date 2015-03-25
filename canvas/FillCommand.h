@@ -21,7 +21,7 @@ public:
     virtual void execute(Canvas& canvas);
 
 private:
-    size_t getNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[4]) const;
+    size_t getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[4]) const;
     
 private:
     size_t startX_;

@@ -36,7 +36,7 @@ LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
         // horizontal
         for (size_t col = std::min(startX_, endX_); col <= std::max(startX_, endX_); ++col)
         {
-            canvas(col, startY_) = CanvasCell('x');
+            canvas(col, startY_) = CanvasCell(DRAW_CHAR);
         }
     }
     else if (startX_ == endX_)
@@ -44,7 +44,7 @@ LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
         // vertical
         for (size_t row = std::min(startY_, endY_); row <= std::max(startY_, endY_); ++row)
         {
-            canvas(startX_, row) = CanvasCell('x');
+            canvas(startX_, row) = CanvasCell(DRAW_CHAR);
         }
     }
     else

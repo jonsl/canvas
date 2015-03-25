@@ -12,6 +12,7 @@
 class CanvasCell
 {
     enum { EMPTY = ' ' };
+
 public:
     CanvasCell(char colour = EMPTY)
         : colour_(colour) { }

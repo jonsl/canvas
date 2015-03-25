@@ -13,6 +13,8 @@
 
 class LineCommand : public CanvasCommand
 {
+    enum { DRAW_CHAR = 'x' };
+    
 public:
     LineCommand(size_t startX, size_t startY, size_t endX, size_t endY);
     virtual ~LineCommand();
