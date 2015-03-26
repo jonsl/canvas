@@ -32,12 +32,12 @@ FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
     {
         size_t current = frontier.front();
         frontier.pop_front();
-        size_t neighbours[4];
+        size_t neighbours[MAX_CELL_NEIGHBOURS];
         size_t numNeighbours = getCellNeighbours(canvas, current, neighbours);
         for (size_t i = 0; i < numNeighbours; ++i)
         {
             size_t next = neighbours[i];
-            if (canvas[next].getColour() == ' ')
+            if (canvas[next].getColour() == CanvasCell::EMPTY)
             {
                 frontier.push_back(next);
                 canvas[next] = canvasCell_;
@@ -46,7 +46,7 @@ FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
     }
 }
 
-size_t FillCommand::getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[4]) const
+size_t FillCommand::getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[MAX_CELL_NEIGHBOURS]) const
 {
     if (index >= canvas.getCols() * canvas.getRows())
     {

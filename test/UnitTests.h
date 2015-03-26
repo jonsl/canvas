@@ -10,14 +10,17 @@
 #define canvas_UnitTests_h
 
 #include "Canvas.h"
+#include "CreateCanvasCommand.h"
 #include "LineCommand.h"
 #include "RectangleCommand.h"
 #include "FillCommand.h"
 
 TEST_CASE("Canvas initialisation", "[Canvas]")
 {
+    Canvas canvas;
     try {
-        Canvas canvas(20, 4);
+        CreateCanvasCommand createCanvas(20, 4);
+        createCanvas.execute(canvas);
         REQUIRE(canvas.getState() ==    "----------------------\n"
                                         "|                    |\n"
                                         "|                    |\n"
@@ -26,13 +29,6 @@ TEST_CASE("Canvas initialisation", "[Canvas]")
                                         "----------------------\n");
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
-    }
-    
-    try {
-        Canvas canvas(0, 0);
-        FAIL("zero sized canvas not allowed");
-    } catch (std::exception& ex) {
-        REQUIRE(std::string(ex.what())=="invalid canvas dimension");
     }
 }
 
@@ -151,15 +147,15 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw lines and rectangle")
     {
         try {
-            LineCommand line1(6, 3, 6, 4);
+            LineCommand line1(1, 2, 6, 2);
             line1.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
+                                            "|xxxxxx              |\n"
                                             "|                    |\n"
-                                            "|     x              |\n"
-                                            "|     x              |\n"
+                                            "|                    |\n"
                                             "----------------------\n");
-            LineCommand line2(1, 2, 6, 2);
+            LineCommand line2(6, 3, 6, 4);
             line2.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"

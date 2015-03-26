@@ -13,11 +13,10 @@ Canvas::Canvas(size_t cols, size_t rows)
     , rows_(rows)
     , data_()
 {
-    if (cols_==0 || rows_==0)
+    if (cols_!=0 && rows_!=0)
     {
-        throw BadRange("invalid canvas dimension");
+        data_.resize(cols_*rows_, CanvasCell::EMPTY);
     }
-    data_.resize(cols_*rows_, ' ');
 }
 
 /*virtual */Canvas::~Canvas()

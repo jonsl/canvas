@@ -9,7 +9,7 @@
 #include "RectangleCommand.h"
 #include "LineCommand.h"
 
-RectangleCommand::RectangleCommand(unsigned startX, unsigned startY, unsigned endX, unsigned endY)
+RectangleCommand::RectangleCommand(size_t startX, size_t startY, size_t endX, size_t endY)
     : CanvasCommand()
     , startX_(startX)
     , startY_(startY)

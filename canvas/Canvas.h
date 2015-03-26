@@ -18,11 +18,12 @@
 class Canvas
 {
 public:
-    Canvas(size_t cols, size_t rows);
+    Canvas(size_t cols = 0, size_t rows = 0);
     virtual ~Canvas();
     
     size_t getCols();
     size_t getRows();
+    Canvas& operator=(Canvas const& other);
     CanvasCell& operator() (size_t col, size_t row);
     CanvasCell& operator[](size_t const index);
     std::string getState();
@@ -43,6 +44,16 @@ inline
 size_t Canvas::getRows()
 {
     return rows_;
+}
+
+inline
+Canvas& Canvas::operator=(Canvas const& other)
+{
+    // self assignment safe; a check would punish the many to benefit the few
+    cols_ = other.cols_;
+    rows_ = other.rows_;
+    data_ = other.data_;
+    return *this;
 }
 
 inline

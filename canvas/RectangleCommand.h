@@ -14,15 +14,17 @@
 class RectangleCommand : public CanvasCommand
 {
 public:
-    RectangleCommand(unsigned startX, unsigned startY, unsigned endX, unsigned endY);
+    RectangleCommand(size_t startX, size_t startY, size_t endX, size_t endY);
     virtual ~RectangleCommand();
     
     // CanvasCommand
     virtual void execute(Canvas& canvas);
     
 private:
-    unsigned startX_, startY_;
-    unsigned endX_, endY_;
+    size_t startX_;
+    size_t startY_;
+    size_t endX_;
+    size_t endY_;
 };
 
 #endif /* defined(__canvas__RectangleCommand__) */

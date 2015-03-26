@@ -10,9 +10,11 @@
 
 #ifndef RUN_TESTS
 
+#include "CanvasCommandFactory.h"
+
 int main( int argc, char* const argv[] )
 {
-    
+
     return 0;
 }
 

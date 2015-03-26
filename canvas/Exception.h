@@ -12,14 +12,21 @@
 class BadRange : public std::runtime_error
 {
 public:
-    BadRange(std::string what)
+    explicit BadRange(std::string what)
+        : std::runtime_error(what) { }
+};
+
+class BadParameter : public std::runtime_error
+{
+public:
+    explicit BadParameter(std::string what)
         : std::runtime_error(what) { }
 };
 
 class NotImplemented : public std::runtime_error
 {
 public:
-    NotImplemented(std::string what)
+    explicit NotImplemented(std::string what)
         : std::runtime_error(what) { }
 };
 

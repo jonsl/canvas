@@ -13,6 +13,8 @@
 
 class FillCommand : public CanvasCommand
 {
+    enum { MAX_CELL_NEIGHBOURS = 4 };
+
 public:
     FillCommand(size_t startX, size_t startY, CanvasCell canvasCell);
     virtual ~FillCommand();
@@ -21,7 +23,7 @@ public:
     virtual void execute(Canvas& canvas);
 
 private:
-    size_t getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[4]) const;
+    size_t getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[MAX_CELL_NEIGHBOURS]) const;
     
 private:
     size_t startX_;
