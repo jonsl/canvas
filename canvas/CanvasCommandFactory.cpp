@@ -48,5 +48,5 @@ std::unique_ptr<CanvasCommand> CanvasCommandFactory::create(CommandLine& command
             throw NotImplemented("invalid command request");
         }
     }
-    return canvasCommand;
+    return std::move(canvasCommand);
 }

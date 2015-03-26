@@ -14,7 +14,20 @@
 
 int main( int argc, char* const argv[] )
 {
-
+    Canvas theCanvas;
+    
+    std::string command;
+    while (std::getline(std::cin >> std::ws, command))
+    {
+        CommandLine commandLine(command, " ");
+        std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);
+        if (!canvasCommand)
+        {
+            break ;
+        }
+        canvasCommand->execute(theCanvas);
+        std::cout << theCanvas.getState();
+    }
     return 0;
 }
 

@@ -1,2 +1,4 @@
+*.o
 *.xcuserstate
 canvas.xcodeproj/xcuserdata/jslater.xcuserdatad/
+draw
