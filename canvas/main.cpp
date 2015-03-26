@@ -12,12 +12,18 @@
 
 #include "CanvasCommandFactory.h"
 
+std::istream& getLine(std::string const& prompt, std::string& command)
+{
+    std::cout << prompt;
+    return std::getline(std::cin >> std::ws, command);
+}
+
 int main( int argc, char* const argv[] )
 {
     Canvas theCanvas;
     
     std::string command;
-    while (std::getline(std::cin >> std::ws, command))
+    while (getLine("enter command: ", command))
     {
         CommandLine commandLine(command, " ");
         std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);

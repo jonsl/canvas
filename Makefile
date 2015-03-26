@@ -14,4 +14,4 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	\rm canvas/*.o canvas/*~ draw
+	\rm -f canvas/*.o canvas/*~ draw
