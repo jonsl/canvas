@@ -1,1 +1,133 @@
 
+Problem Statement
+-----------------
+You're given the task of writing a simple console version of a drawing program. At this time, the functionality of the program is quite limited but this might change in the future. In a nutshell, the program should work as follows:
+1. create a new canvas
+2. start drawing on the canvas by issuing various commands
+3. quit
+
+At the moment, the program should support the following commands:
+Command 			Description
+C w h 				Should create a new canvas of width w and height h.
+L x1 y1 x2 y2		Should create a new line from (x1,y1) to (x2,y2). Currently only horizontal or vertical lines are supported. Horizontal and vertical lines will be drawn using the 'x' character.
+R x1 y1 x2 y2		Should create a new rectangle, whose upper left corner is (x1,y1) and lower right corner is (x2,y2). Horizontal and vertical lines will be drawn using the 'x' character.
+B x y c  			Should fill the entire area connected to (x,y) with "colour" c. The behaviour of this is the same as that of the "bucket fill" tool in paint programs.
+Q  					Should quit the program.
+
+Sample I/O
+Below is a sample run of the program. User input is prefixed with enter command:.
+enter command: C 20 4
+----------------------
+|                    |
+|                    |
+|                    |
+|                    |
+----------------------
+
+enter command: L 1 2 6 2
+----------------------
+|                    |
+|xxxxxx              |
+|                    |
+|                    |
+----------------------
+
+enter command: L 6 3 6 4
+----------------------
+|                    |
+|xxxxxx              |
+|     x              |
+|     x              |
+----------------------
+
+enter command: R 16 1 20 3
+----------------------
+|               xxxxx|
+|xxxxxx         x   x|
+|     x         xxxxx|
+|     x              |
+----------------------
+
+enter command: B 10 3 o
+----------------------
+|oooooooooooooooxxxxx|
+|xxxxxxooooooooox   x|
+|     xoooooooooxxxxx|
+|     xoooooooooooooo|
+----------------------
+
+enter command: Q
+
+
+Solution
+--------
+
+Third Party Dependencies
+------------------------
+There is a single dependency to facilitate testing (Please see the 'Testing' section further down):
+
+REF: https://github.com/philsquared/Catch/tree/master/single_include
+
+This is an lightweight open-source dependency-free testing framework for C++.
+
+Prerequisites
+-------------
+I have built the project with:
+g++ 4.8.2-19ubuntu1
+clang-600.0.57
+
+The project *should* build with all g++ versions which support -std=c++11.
+
+Building
+--------
+I have created a Makefile in the project root, to build:
+$ make clean && make
+
+To execute:
+$ ./draw
+
+There is also an Xcode 6 project file (canvas.xcodeproj).
+
+Testing
+-------
+To build and run the tests:
+$ make clean && make CPPFLAGS=-DRUN_TESTS
+$ ./draw
+
+Please note that the catch testing framework provides the following options:
+$ ./draw -?
+Catch v1.0 build 53
+usage:
+  draw [<test name, pattern or tags> ...] [options]
+
+where options are:
+  -?, -h, --help               display usage information
+  -l, --list-tests             list all/matching test cases
+  -t, --list-tags              list all/matching tags
+  -s, --success                include successful tests in output
+  -b, --break                  break into debugger on failure
+  -e, --nothrow                skip exception tests
+  -i, --invisibles             show invisibles (tabs, newlines)
+  -o, --out <filename>         output filename
+  -r, --reporter <name>        reporter to use (defaults to console)
+  -n, --name <name>            suite name
+  -a, --abort                  abort at first failure
+  -x, --abortx <no. failures>  abort after x failures
+  -w, --warn <warning name>    enable warnings
+  -d, --durations <yes/no>     show test durations
+  -f, --input-file <filename>  load test names to run from a file
+  --list-test-names-only       list all/matching test cases names only
+  --list-reporters             list all reporters
+
+For example to list the tests run:
+$ ./draw -?
+All available test cases:
+  Canvas initialisation
+      [Canvas]
+  CanvasCommand initialisation
+      [CanvasCommand]
+  CanvasCommand drawing to canvas
+      [CanvasCommand]
+  test commands
+      [CanvasCommandFactory]
+4 test cases

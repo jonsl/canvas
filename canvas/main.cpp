@@ -34,7 +34,7 @@ int main( int argc, char* const argv[] )
                 break ;
             }
             canvasCommand->execute(theCanvas);
-            std::cout << theCanvas.getState();
+            std::cout << theCanvas.getState() << std::endl;
         }
         catch (std::exception& ex)
         {

@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-std=c++11 -c -Wall
+CXXFLAGS=-std=c++11 -c -Wall -Icanvas -Itest
 LDFLAGS=
 SOURCES=canvas/Canvas.cpp canvas/CanvasCommandFactory.cpp canvas/CreateCanvasCommand.cpp canvas/DrawLineCommand.cpp canvas/DrawRectangleCommand.cpp canvas/BucketFillCommand.cpp canvas/main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
@@ -11,7 +11,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 .cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CPPFLAGS) $(CXXFLAGS) $< -o $@
 
 clean:
 	\rm -f canvas/*.o canvas/*~ draw
