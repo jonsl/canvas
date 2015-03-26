@@ -27,7 +27,10 @@ BucketFillCommand::BucketFillCommand(size_t startX, size_t startY, CanvasCell ca
     size_t start = (startY_-1)*canvas.getCols() + (startX_-1);
     std::deque<size_t> frontier;
     frontier.push_back(start);
-    canvas[start] = canvasCell_;
+    if (canvas[start].getColour() == CanvasCell::EMPTY)
+    {
+        canvas[start] = canvasCell_;
+    }
     while (frontier.size() > 0)
     {
         size_t current = frontier.front();

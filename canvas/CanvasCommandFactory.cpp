@@ -37,7 +37,7 @@ std::unique_ptr<CanvasCommand> CanvasCommandFactory::create(CommandLine& command
         }
         else if (nextToken=="B")
         {
-            canvasCommand.reset(new BucketFillCommand(commandLine.nextParameter(), commandLine.nextParameter(), 'o'));
+            canvasCommand.reset(new BucketFillCommand(commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextToken().at(0)));
         }
         else if (nextToken=="Q")
         {

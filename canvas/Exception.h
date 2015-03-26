@@ -34,4 +34,3 @@ public:
 };
 
 #endif /* defined(__canvas__Exception__) */
-
