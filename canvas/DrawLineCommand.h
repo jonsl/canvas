@@ -16,7 +16,7 @@ class DrawLineCommand : public CanvasCommand
     enum { DRAW_CHAR = 'x' };
     
 public:
-    DrawLineCommand(size_t startX, size_t startY, size_t endX, size_t endY);
+    DrawLineCommand(long startX, long startY, long endX, long endY);
     virtual ~DrawLineCommand();
     
     // CanvasCommand

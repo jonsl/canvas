@@ -14,7 +14,7 @@
 class CreateCanvasCommand : public CanvasCommand
 {
 public:
-    CreateCanvasCommand(size_t cols, size_t rows);
+    CreateCanvasCommand(long cols, long rows);
     virtual ~CreateCanvasCommand();
     
     // CanvasCommand

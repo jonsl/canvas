@@ -16,7 +16,7 @@ class BucketFillCommand : public CanvasCommand
     enum { MAX_CELL_NEIGHBOURS = 4 };
 
 public:
-    BucketFillCommand(size_t startX, size_t startY, CanvasCell canvasCell);
+    BucketFillCommand(long startX, long startY, CanvasCell canvasCell);
     virtual ~BucketFillCommand();
     
     // CanvasCommand

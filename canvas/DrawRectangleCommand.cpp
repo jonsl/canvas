@@ -17,6 +17,10 @@ DrawRectangleCommand::DrawRectangleCommand(size_t startX, size_t startY, size_t 
     , endY_(endY)
 {
     // start and end points can be the same point
+    if (startX < 1 || startY < 1 || endX < 1 || endY < 1)
+    {
+        throw BadRange("invalid rectangle point");
+    }
 }
 
 /*virtual */DrawRectangleCommand::~DrawRectangleCommand()

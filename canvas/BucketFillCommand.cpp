@@ -9,12 +9,16 @@
 #include "BucketFillCommand.h"
 #include <deque>
 
-BucketFillCommand::BucketFillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
+BucketFillCommand::BucketFillCommand(long startX, long startY, CanvasCell canvasCell)
     : CanvasCommand()
     , startX_(startX)
     , startY_(startY)
     , canvasCell_(canvasCell)
 {
+    if (startX < 1 || startY < 1)
+    {
+        throw BadRange("invalid bucket fill start");
+    }
 }
 
 /*virtual */BucketFillCommand::~BucketFillCommand()
@@ -25,12 +29,13 @@ BucketFillCommand::BucketFillCommand(size_t startX, size_t startY, CanvasCell ca
 /*virtual */void BucketFillCommand::execute(Canvas& canvas)
 {
     size_t start = (startY_-1)*canvas.getCols() + (startX_-1);
+    if (canvas[start].getColour() != CanvasCell::EMPTY)
+    {
+        return ;
+    }
     std::deque<size_t> frontier;
     frontier.push_back(start);
-    if (canvas[start].getColour() == CanvasCell::EMPTY)
-    {
-        canvas[start] = canvasCell_;
-    }
+    canvas[start] = canvasCell_;
     while (frontier.size() > 0)
     {
         size_t current = frontier.front();

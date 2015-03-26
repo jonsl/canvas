@@ -8,11 +8,15 @@
 
 #include "CreateCanvasCommand.h"
 
-CreateCanvasCommand::CreateCanvasCommand(size_t cols, size_t rows)
+CreateCanvasCommand::CreateCanvasCommand(long cols, long rows)
     : CanvasCommand()
     , cols_(cols)
     , rows_(rows)
 {
+    if (cols < 1 || rows < 1)
+    {
+        throw BadRange("invalid canvas dimension");
+    }
 }
 
 /*virtual */CreateCanvasCommand::~CreateCanvasCommand()

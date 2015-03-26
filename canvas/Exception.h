@@ -12,18 +12,18 @@
 #include <stdexcept>
 #include <string>
 
-class BadRange : public std::runtime_error
+class BadRange : public std::logic_error
 {
 public:
     explicit BadRange(std::string const& what)
-        : std::runtime_error(what) { }
+        : std::logic_error(what) { }
 };
 
-class BadParameter : public std::runtime_error
+class BadParameter : public std::logic_error
 {
 public:
     explicit BadParameter(std::string const& what)
-        : std::runtime_error(what) { }
+        : std::logic_error(what) { }
 };
 
 class NotImplemented : public std::runtime_error

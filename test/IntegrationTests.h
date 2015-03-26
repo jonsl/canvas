@@ -113,7 +113,7 @@ TEST_CASE("test commands", "[CanvasCommandFactory]")
         std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);
         FAIL("invalid command request");
     } catch (NotImplemented& ex) {
-        REQUIRE(std::string(ex.what()) == "invalid command request");
+        REQUIRE(std::string(ex.what()) == "unknown command request");
     }
 }
 

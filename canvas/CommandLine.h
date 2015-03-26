@@ -37,14 +37,14 @@ public:
         }
     }
     
-    size_t nextParameter()
+    long nextParameter()
     {
         std::string nextToken = this->nextToken();
         if (nextToken.length() == 0)
         {
-            throw std::invalid_argument("invalid parameter");
+            throw BadParameter("invalid parameter");
         }
-        return std::stoul(nextToken);
+        return std::stol(nextToken);
     }
     
     void reset()

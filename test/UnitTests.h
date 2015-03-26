@@ -58,14 +58,14 @@ TEST_CASE("CanvasCommand initialisation", "[CanvasCommand]")
         line.execute(canvas);
         FAIL("canvas subscript out of bounds");
     } catch (BadRange& ex) {
-        REQUIRE(std::string(ex.what())=="canvas subscript out of bounds");
+        REQUIRE(std::string(ex.what())=="invalid line endpoint");
     }
     try {
         BucketFillCommand fill(0, 0, CanvasCell());
         fill.execute(canvas);
         FAIL("canvas subscript out of bounds");
     } catch (BadRange& ex) {
-        REQUIRE(std::string(ex.what())=="canvas subscript out of bounds");
+        REQUIRE(std::string(ex.what())=="invalid bucket fill start");
     }
 }
 

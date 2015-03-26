@@ -25,14 +25,21 @@ int main( int argc, char* const argv[] )
     std::string command;
     while (getLine("enter command: ", command))
     {
-        CommandLine commandLine(command, " ");
-        std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);
-        if (!canvasCommand)
+        try
         {
-            break ;
+            CommandLine commandLine(command, " ");
+            std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);
+            if (!canvasCommand)
+            {
+                break ;
+            }
+            canvasCommand->execute(theCanvas);
+            std::cout << theCanvas.getState();
         }
-        canvasCommand->execute(theCanvas);
-        std::cout << theCanvas.getState();
+        catch (std::exception& ex)
+        {
+            std::cout << "error: " << ex.what() << std::endl;
+        }
     }
     return 0;
 }

@@ -8,13 +8,17 @@
 
 #include "DrawLineCommand.h"
 
-DrawLineCommand::DrawLineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
+DrawLineCommand::DrawLineCommand(long startX, long startY, long endX, long endY)
     : CanvasCommand()
     , startX_(startX)
     , startY_(startY)
     , endX_(endX)
     , endY_(endY)
 {
+    if (startX < 1 || startY < 1 || endX < 1 || endY < 1)
+    {
+        throw BadRange("invalid line endpoint");
+    }
     if (startX_ != endX_ && startY_ != endY_)
     {
         throw NotImplemented("currently only horizontal and vertical lines are supported");
