@@ -66,11 +66,11 @@ size_t BucketFillCommand::getCellNeighbours(Canvas& canvas, size_t index, size_t
     {
         neighbours[numberNeighbours++] = index - 1;
     }
-    if (y + 1 <= canvas.getRows())
+    if (y + 1 <= (long)canvas.getRows())
     {
         neighbours[numberNeighbours++] = index + canvas.getCols();
     }
-    if (x + 1 <= canvas.getCols())
+    if (x + 1 <= (long)canvas.getCols())
     {
         neighbours[numberNeighbours++] = index + 1;
     }

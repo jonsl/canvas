@@ -9,6 +9,7 @@
 #ifndef __canvas__CanvasCommandFactory__
 #define __canvas__CanvasCommandFactory__
 
+#include <memory>
 #include "CanvasCommand.h"
 #include "CommandLine.h"
 #include "CreateCanvasCommand.h"

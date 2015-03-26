@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall
+CFLAGS=-std=c++11 -c -Wall
 LDFLAGS=
 SOURCES=canvas/Canvas.cpp canvas/CanvasCommandFactory.cpp canvas/CreateCanvasCommand.cpp canvas/DrawLineCommand.cpp canvas/DrawRectangleCommand.cpp canvas/BucketFillCommand.cpp canvas/main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
