@@ -1,14 +1,14 @@
 //
-//  LineCommand.cpp
+//  DrawLineCommand.cpp
 //  canvas
 //
 //  Created by Jonathan Slater on 21/03/2015.
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#include "LineCommand.h"
+#include "DrawLineCommand.h"
 
-LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
+DrawLineCommand::DrawLineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
     : CanvasCommand()
     , startX_(startX)
     , startY_(startY)
@@ -21,12 +21,12 @@ LineCommand::LineCommand(size_t startX, size_t startY, size_t endX, size_t endY)
     }
 }
 
-/*virtual */LineCommand::~LineCommand()
+/*virtual */DrawLineCommand::~DrawLineCommand()
 {
 }
 
 // CanvasCommand
-/*virtual */void LineCommand::execute(Canvas& canvas)
+/*virtual */void DrawLineCommand::execute(Canvas& canvas)
 {
     // validation done in Canvas::operator()
     

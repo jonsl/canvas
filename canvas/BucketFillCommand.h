@@ -1,23 +1,23 @@
 //
-//  FillCommand.h
+//  BucketFillCommand.h
 //  canvas
 //
 //  Created by Jonathan Slater on 25/03/2015.
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#ifndef __canvas__FillCommand__
-#define __canvas__FillCommand__
+#ifndef __canvas__BucketFillCommand__
+#define __canvas__BucketFillCommand__
 
 #include "CanvasCommand.h"
 
-class FillCommand : public CanvasCommand
+class BucketFillCommand : public CanvasCommand
 {
     enum { MAX_CELL_NEIGHBOURS = 4 };
 
 public:
-    FillCommand(size_t startX, size_t startY, CanvasCell canvasCell);
-    virtual ~FillCommand();
+    BucketFillCommand(size_t startX, size_t startY, CanvasCell canvasCell);
+    virtual ~BucketFillCommand();
     
     // CanvasCommand
     virtual void execute(Canvas& canvas);
@@ -31,4 +31,4 @@ private:
     CanvasCell canvasCell_;
 };
 
-#endif /* defined(__canvas__FillCommand__) */
+#endif /* defined(__canvas__BucketFillCommand__) */

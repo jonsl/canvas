@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#define RUN_TESTS
+//#define RUN_TESTS
 
 #ifndef RUN_TESTS
 

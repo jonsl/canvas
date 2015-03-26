@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A60379A1AC411ED00ECEF08 /* CanvasCommandFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A6037981AC411ED00ECEF08 /* CanvasCommandFactory.cpp */; };
 		1A6037A01AC4271D00ECEF08 /* CreateCanvasCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A60379E1AC4271D00ECEF08 /* CreateCanvasCommand.cpp */; };
-		3330EB471ABD941D0012EA2A /* LineCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB461ABD941D0012EA2A /* LineCommand.cpp */; };
-		3330EB491ABD949B0012EA2A /* RectangleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */; };
+		3330EB471ABD941D0012EA2A /* DrawLineCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB461ABD941D0012EA2A /* DrawLineCommand.cpp */; };
+		3330EB491ABD949B0012EA2A /* DrawRectangleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* DrawRectangleCommand.cpp */; };
 		3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB4A1ABD95B50012EA2A /* Canvas.cpp */; };
-		33CCA7101AC351B600013E6F /* FillCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CCA70E1AC351B600013E6F /* FillCommand.cpp */; };
+		33CCA7101AC351B600013E6F /* BucketFillCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */; };
 		33D858771ABCD26E00EF2919 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D858761ABCD26E00EF2919 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -37,15 +37,15 @@
 		1A60379F1AC4271D00ECEF08 /* CreateCanvasCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCanvasCommand.h; sourceTree = "<group>"; };
 		3304358E1ABDE22D00FCFE83 /* UnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
 		3304358F1ABDE45900FCFE83 /* IntegrationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntegrationTests.h; sourceTree = "<group>"; };
-		3330EB3A1ABD810C0012EA2A /* LineCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineCommand.h; sourceTree = "<group>"; };
-		3330EB3B1ABD84880012EA2A /* RectangleCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RectangleCommand.h; sourceTree = "<group>"; };
-		3330EB461ABD941D0012EA2A /* LineCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineCommand.cpp; sourceTree = "<group>"; };
-		3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectangleCommand.cpp; sourceTree = "<group>"; };
+		3330EB3A1ABD810C0012EA2A /* DrawLineCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineCommand.h; sourceTree = "<group>"; };
+		3330EB3B1ABD84880012EA2A /* DrawRectangleCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRectangleCommand.h; sourceTree = "<group>"; };
+		3330EB461ABD941D0012EA2A /* DrawLineCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawLineCommand.cpp; sourceTree = "<group>"; };
+		3330EB481ABD949B0012EA2A /* DrawRectangleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawRectangleCommand.cpp; sourceTree = "<group>"; };
 		3330EB4A1ABD95B50012EA2A /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
 		337C563D1ABD664200512EBB /* Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		33CCA70C1AC349A200013E6F /* CanvasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCell.h; sourceTree = "<group>"; };
-		33CCA70E1AC351B600013E6F /* FillCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FillCommand.cpp; sourceTree = "<group>"; };
-		33CCA70F1AC351B600013E6F /* FillCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillCommand.h; sourceTree = "<group>"; };
+		33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BucketFillCommand.cpp; sourceTree = "<group>"; };
+		33CCA70F1AC351B600013E6F /* BucketFillCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketFillCommand.h; sourceTree = "<group>"; };
 		33D858731ABCD26E00EF2919 /* canvas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = canvas; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D858761ABCD26E00EF2919 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33D8587E1ABCD2C400EF2919 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		33D858751ABCD26E00EF2919 /* canvas */ = {
 			isa = PBXGroup;
 			children = (
+				33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */,
+				33CCA70F1AC351B600013E6F /* BucketFillCommand.h */,
 				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
 				33D858921ABCE25200EF2919 /* Canvas.h */,
 				33CCA70C1AC349A200013E6F /* CanvasCell.h */,
@@ -92,14 +94,12 @@
 				1A44194F1AC30B8E005DF9EA /* CommandLine.h */,
 				1A60379E1AC4271D00ECEF08 /* CreateCanvasCommand.cpp */,
 				1A60379F1AC4271D00ECEF08 /* CreateCanvasCommand.h */,
+				3330EB461ABD941D0012EA2A /* DrawLineCommand.cpp */,
+				3330EB3A1ABD810C0012EA2A /* DrawLineCommand.h */,
+				3330EB481ABD949B0012EA2A /* DrawRectangleCommand.cpp */,
+				3330EB3B1ABD84880012EA2A /* DrawRectangleCommand.h */,
 				337C563D1ABD664200512EBB /* Exception.h */,
-				33CCA70E1AC351B600013E6F /* FillCommand.cpp */,
-				33CCA70F1AC351B600013E6F /* FillCommand.h */,
-				3330EB461ABD941D0012EA2A /* LineCommand.cpp */,
-				3330EB3A1ABD810C0012EA2A /* LineCommand.h */,
 				33D858761ABCD26E00EF2919 /* main.cpp */,
-				3330EB481ABD949B0012EA2A /* RectangleCommand.cpp */,
-				3330EB3B1ABD84880012EA2A /* RectangleCommand.h */,
 			);
 			path = canvas;
 			sourceTree = "<group>";
@@ -171,11 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A60379A1AC411ED00ECEF08 /* CanvasCommandFactory.cpp in Sources */,
-				3330EB471ABD941D0012EA2A /* LineCommand.cpp in Sources */,
-				3330EB491ABD949B0012EA2A /* RectangleCommand.cpp in Sources */,
+				3330EB471ABD941D0012EA2A /* DrawLineCommand.cpp in Sources */,
+				3330EB491ABD949B0012EA2A /* DrawRectangleCommand.cpp in Sources */,
 				33D858771ABCD26E00EF2919 /* main.cpp in Sources */,
 				1A6037A01AC4271D00ECEF08 /* CreateCanvasCommand.cpp in Sources */,
-				33CCA7101AC351B600013E6F /* FillCommand.cpp in Sources */,
+				33CCA7101AC351B600013E6F /* BucketFillCommand.cpp in Sources */,
 				3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

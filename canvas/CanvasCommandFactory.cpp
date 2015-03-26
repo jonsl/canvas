@@ -1,5 +1,5 @@
 //
-//  CommandFactory.cpp
+//  CanvasCommandFactory.cpp
 //  canvas
 //
 //  Created by Jonathan Slater on 26/03/2015.
@@ -29,15 +29,15 @@ std::unique_ptr<CanvasCommand> CanvasCommandFactory::create(CommandLine& command
         }
         else if (nextToken=="L")
         {
-            canvasCommand.reset(new LineCommand(commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter()));
+            canvasCommand.reset(new DrawLineCommand(commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter()));
         }
         else if (nextToken=="R")
         {
-            canvasCommand.reset(new RectangleCommand(commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter()));
+            canvasCommand.reset(new DrawRectangleCommand(commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter(), commandLine.nextParameter()));
         }
         else if (nextToken=="B")
         {
-            canvasCommand.reset(new FillCommand(commandLine.nextParameter(), commandLine.nextParameter(), 'o'));
+            canvasCommand.reset(new BucketFillCommand(commandLine.nextParameter(), commandLine.nextParameter(), 'o'));
         }
         else if (nextToken=="Q")
         {

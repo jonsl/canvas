@@ -1,6 +1,6 @@
 //
 //  Canvas.h
-//  frontier
+//  canvas
 //
 //  Created by Jonathan Slater on 23/02/2015.
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.

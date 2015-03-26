@@ -20,7 +20,6 @@ TEST_CASE("test commands", "[CanvasCommandFactory]")
         CommandLine commandLine("C 20 4", " ");
         std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);
         canvasCommand->execute(canvas);
-        std::cout << canvas.getState();
         REQUIRE(canvas.getState() ==    "----------------------\n"
                                         "|                    |\n"
                                         "|                    |\n"
@@ -35,7 +34,6 @@ TEST_CASE("test commands", "[CanvasCommandFactory]")
         CommandLine commandLine("L 1 2 6 2", " ");
         std::unique_ptr<CanvasCommand> canvasCommand = CanvasCommandFactory().create(commandLine);
         canvasCommand->execute(canvas);
-        std::cout << canvas.getState();
         REQUIRE(canvas.getState() ==    "----------------------\n"
                                         "|                    |\n"
                                         "|xxxxxx              |\n"

@@ -9,9 +9,9 @@
 #include "CreateCanvasCommand.h"
 
 CreateCanvasCommand::CreateCanvasCommand(size_t cols, size_t rows)
-: CanvasCommand()
-, cols_(cols)
-, rows_(rows)
+    : CanvasCommand()
+    , cols_(cols)
+    , rows_(rows)
 {
 }
 

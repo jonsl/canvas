@@ -11,9 +11,9 @@
 
 #include "Canvas.h"
 #include "CreateCanvasCommand.h"
-#include "LineCommand.h"
-#include "RectangleCommand.h"
-#include "FillCommand.h"
+#include "DrawLineCommand.h"
+#include "DrawRectangleCommand.h"
+#include "BucketFillCommand.h"
 
 TEST_CASE("Canvas initialisation", "[Canvas]")
 {
@@ -36,32 +36,32 @@ TEST_CASE("CanvasCommand initialisation", "[CanvasCommand]")
 {
     Canvas canvas(20, 4);
     try {
-        LineCommand line(1, 1, 10, 1);
+        DrawLineCommand line(1, 1, 10, 1);
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
     }
     
     try {
-        LineCommand line(1, 1, 1, 10);
+        DrawLineCommand line(1, 1, 1, 10);
     } catch (std::exception& ex) {
         FAIL("exception " << ex.what());
     }
     
     try {
-        LineCommand line(1, 1, 10, 10);
+        DrawLineCommand line(1, 1, 10, 10);
         FAIL("currently only horizontal and vertical lines are supported");
     } catch (NotImplemented& ex) {
         REQUIRE(std::string(ex.what())=="currently only horizontal and vertical lines are supported");
     }
     try {
-        LineCommand line(0, 0, 10, 0);
+        DrawLineCommand line(0, 0, 10, 0);
         line.execute(canvas);
         FAIL("canvas subscript out of bounds");
     } catch (BadRange& ex) {
         REQUIRE(std::string(ex.what())=="canvas subscript out of bounds");
     }
     try {
-        FillCommand fill(0, 0, CanvasCell());
+        BucketFillCommand fill(0, 0, CanvasCell());
         fill.execute(canvas);
         FAIL("canvas subscript out of bounds");
     } catch (BadRange& ex) {
@@ -86,7 +86,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw horizonal line")
     {
         try {
-            LineCommand line(1, 2, 6, 2);
+            DrawLineCommand line(1, 2, 6, 2);
             line.execute(canvas);
             std::string str = canvas.getState();
             REQUIRE(canvas.getState() ==    "----------------------\n"
@@ -102,7 +102,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw vertical line")
     {
         try {
-            LineCommand line(6, 3, 6, 4);
+            DrawLineCommand line(6, 3, 6, 4);
             line.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
@@ -117,7 +117,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw rectangle")
     {
         try {
-            RectangleCommand rectangle(16, 1, 20, 3);
+            DrawRectangleCommand rectangle(16, 1, 20, 3);
             rectangle.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|               xxxxx|\n"
@@ -132,7 +132,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw fill")
     {
         try {
-            FillCommand fill(5, 3, CanvasCell('o'));
+            BucketFillCommand fill(5, 3, CanvasCell('o'));
             fill.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|oooooooooooooooooooo|\n"
@@ -147,7 +147,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
     SECTION("draw lines and rectangle")
     {
         try {
-            LineCommand line1(1, 2, 6, 2);
+            DrawLineCommand line1(1, 2, 6, 2);
             line1.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
@@ -155,7 +155,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
                                             "|                    |\n"
                                             "|                    |\n"
                                             "----------------------\n");
-            LineCommand line2(6, 3, 6, 4);
+            DrawLineCommand line2(6, 3, 6, 4);
             line2.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|                    |\n"
@@ -163,7 +163,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
                                             "|     x              |\n"
                                             "|     x              |\n"
                                             "----------------------\n");
-            RectangleCommand rectangle(16, 1, 20, 3);
+            DrawRectangleCommand rectangle(16, 1, 20, 3);
             rectangle.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|               xxxxx|\n"
@@ -171,7 +171,7 @@ TEST_CASE("CanvasCommand drawing to canvas", "[CanvasCommand]")
                                             "|     x         xxxxx|\n"
                                             "|     x              |\n"
                                             "----------------------\n");
-            FillCommand fill(10, 3, CanvasCell('o'));
+            BucketFillCommand fill(10, 3, CanvasCell('o'));
             fill.execute(canvas);
             REQUIRE(canvas.getState() ==    "----------------------\n"
                                             "|oooooooooooooooxxxxx|\n"

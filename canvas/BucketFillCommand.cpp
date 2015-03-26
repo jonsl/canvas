@@ -1,15 +1,15 @@
 //
-//  FillCommand.cpp
+//  BucketFillCommand.cpp
 //  canvas
 //
 //  Created by Jonathan Slater on 25/03/2015.
 //  Copyright (c) 2015 Jonathan Slater. All rights reserved.
 //
 
-#include "FillCommand.h"
+#include "BucketFillCommand.h"
 #include <deque>
 
-FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
+BucketFillCommand::BucketFillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
     : CanvasCommand()
     , startX_(startX)
     , startY_(startY)
@@ -17,12 +17,12 @@ FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
 {
 }
 
-/*virtual */FillCommand::~FillCommand()
+/*virtual */BucketFillCommand::~BucketFillCommand()
 {
 }
 
 // CanvasCommand
-/*virtual */void FillCommand::execute(Canvas& canvas)
+/*virtual */void BucketFillCommand::execute(Canvas& canvas)
 {
     size_t start = (startY_-1)*canvas.getCols() + (startX_-1);
     std::deque<size_t> frontier;
@@ -46,7 +46,7 @@ FillCommand::FillCommand(size_t startX, size_t startY, CanvasCell canvasCell)
     }
 }
 
-size_t FillCommand::getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[MAX_CELL_NEIGHBOURS]) const
+size_t BucketFillCommand::getCellNeighbours(Canvas& canvas, size_t index, size_t(& neighbours)[MAX_CELL_NEIGHBOURS]) const
 {
     if (index >= canvas.getCols() * canvas.getRows())
     {
