@@ -15,15 +15,24 @@ public:
     enum { EMPTY = ' ' };
 
 public:
-    CanvasCell(char colour = EMPTY)
-        : colour_(colour) { }
-    char getColour() const
-    {
-        return colour_;
-    }
+    CanvasCell(char colour = EMPTY);
+
+    char getColour() const;
     
 private:
     char colour_;
 };
+
+inline
+CanvasCell::CanvasCell(char colour)
+    : colour_(colour)
+{
+}
+
+inline
+char CanvasCell::getColour() const
+{
+    return colour_;
+}
 
 #endif /* defined(__canvas__CanvasCell__) */

@@ -14,43 +14,11 @@
 class CommandLine
 {
 public:
-    CommandLine(std::string input, std::string delimiter)
-        : input_(input)
-        , delimiter_(delimiter)
-        , pos_(0)
-    {
-    }
-    
-    std::string nextToken()
-    {
-        std::string remaining = input_.substr(pos_);
-        size_t pos = remaining.find(delimiter_);
-        if (pos == std::string::npos)
-        {
-            pos_ = input_.length();
-            return remaining;
-        }
-        else
-        {
-            pos_ += pos + delimiter_.length();
-            return remaining.substr(0, pos);
-        }
-    }
-    
-    long nextParameter()
-    {
-        std::string nextToken = this->nextToken();
-        if (nextToken.length() == 0)
-        {
-            throw BadParameter("invalid parameter");
-        }
-        return std::stol(nextToken);
-    }
-    
-    void reset()
-    {
-        pos_ = 0;
-    }
+    CommandLine(std::string input, std::string delimiter);
+    virtual ~CommandLine();
+
+    std::string nextToken();
+    long nextParameter();
     
 private:
     std::string input_;

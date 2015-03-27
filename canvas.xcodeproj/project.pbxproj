@@ -12,6 +12,8 @@
 		3330EB471ABD941D0012EA2A /* DrawLineCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB461ABD941D0012EA2A /* DrawLineCommand.cpp */; };
 		3330EB491ABD949B0012EA2A /* DrawRectangleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB481ABD949B0012EA2A /* DrawRectangleCommand.cpp */; };
 		3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3330EB4A1ABD95B50012EA2A /* Canvas.cpp */; };
+		333194F41AC5518800DDD626 /* CommandLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 333194F31AC5518800DDD626 /* CommandLine.cpp */; };
+		333194F61AC552C500DDD626 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 333194F51AC552C500DDD626 /* Makefile */; };
 		33CCA7101AC351B600013E6F /* BucketFillCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */; };
 		33D858771ABCD26E00EF2919 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D858761ABCD26E00EF2919 /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,8 @@
 		3330EB461ABD941D0012EA2A /* DrawLineCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawLineCommand.cpp; sourceTree = "<group>"; };
 		3330EB481ABD949B0012EA2A /* DrawRectangleCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawRectangleCommand.cpp; sourceTree = "<group>"; };
 		3330EB4A1ABD95B50012EA2A /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
+		333194F31AC5518800DDD626 /* CommandLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommandLine.cpp; sourceTree = "<group>"; };
+		333194F51AC552C500DDD626 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
 		337C563D1ABD664200512EBB /* Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		33CCA70C1AC349A200013E6F /* CanvasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCell.h; sourceTree = "<group>"; };
 		33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BucketFillCommand.cpp; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		33D858751ABCD26E00EF2919 /* canvas */ = {
 			isa = PBXGroup;
 			children = (
+				333194F51AC552C500DDD626 /* Makefile */,
 				33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */,
 				33CCA70F1AC351B600013E6F /* BucketFillCommand.h */,
 				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
@@ -91,6 +96,7 @@
 				1A4419491AC2FE37005DF9EA /* CanvasCommand.h */,
 				1A6037981AC411ED00ECEF08 /* CanvasCommandFactory.cpp */,
 				1A6037991AC411ED00ECEF08 /* CanvasCommandFactory.h */,
+				333194F31AC5518800DDD626 /* CommandLine.cpp */,
 				1A44194F1AC30B8E005DF9EA /* CommandLine.h */,
 				1A60379E1AC4271D00ECEF08 /* CreateCanvasCommand.cpp */,
 				1A60379F1AC4271D00ECEF08 /* CreateCanvasCommand.h */,
@@ -170,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				333194F61AC552C500DDD626 /* Makefile in Sources */,
 				1A60379A1AC411ED00ECEF08 /* CanvasCommandFactory.cpp in Sources */,
 				3330EB471ABD941D0012EA2A /* DrawLineCommand.cpp in Sources */,
 				3330EB491ABD949B0012EA2A /* DrawRectangleCommand.cpp in Sources */,
@@ -177,6 +184,7 @@
 				1A6037A01AC4271D00ECEF08 /* CreateCanvasCommand.cpp in Sources */,
 				33CCA7101AC351B600013E6F /* BucketFillCommand.cpp in Sources */,
 				3330EB4B1ABD95B50012EA2A /* Canvas.cpp in Sources */,
+				333194F41AC5518800DDD626 /* CommandLine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
