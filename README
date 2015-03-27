@@ -62,6 +62,22 @@ enter command: Q
 Solution
 --------
 
+Design Decisions
+----------------
+I have based my design on the Command and Factory patterns.
+
+Although CanvasCommandFactory class implements 'the instantiation of object without exposing the instantiation logic', when considering this interface from a client point of view, I asked myself the question: 'what would be needed to extend functionality to add more commands?'.
+
+It then occurred to me that the 'Factory' design could be changed to the 'Factory Method' pattern, where instantiation of a Command is deferred to a separate class which understands an individual command from the command line, and a series of these classes could be added to the Factory at startup to 'configure' it. The Factory would then iterate these objects to check if each one 'handles' an invididual command, and if so instantiate the appropriate Command.
+
+I came to the conclusion that from a client point of view, difference between these two approaches was negligible in terms of adding a new Command.
+
+I implemented the Bucket Fill Command using an iterative approach, as I could not be sure that the project would be built with a version of g++ that supports Tail Recursion. I devised an algorithm that for each point to 'fill', it's neighbouring points are in turn considered for visitation during iteration. This approach is a classic implementation of an expanding 'frontier', which is the basis for path-finding algorithmms such as A*.
+
+Error Handling
+--------------
+The error handling is mostly based on std::logic_error, which STL can throw during the parsing operations in the form of std::out_of_range and std::invalid_argument; these exceptions are caught during command parsing and re-thrown as BadParameter("invalid parameter") which is itself derived from std::logic_error.
+
 Third Party Dependencies
 ------------------------
 There is a single dependency to facilitate testing (Please see the 'Testing' section further down):
@@ -131,13 +147,5 @@ All available test cases:
   test commands
       [CanvasCommandFactory]
 4 test cases
-
-Design Decisions
-----------------
-
-
-
-Error Handling
---------------
 
 

@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2B2B741AC5665D00E42F31 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		1A4419491AC2FE37005DF9EA /* CanvasCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCommand.h; sourceTree = "<group>"; };
 		1A44194F1AC30B8E005DF9EA /* CommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLine.h; sourceTree = "<group>"; };
 		1A6037981AC411ED00ECEF08 /* CanvasCommandFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CanvasCommandFactory.cpp; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				333194F51AC552C500DDD626 /* Makefile */,
+				1A2B2B741AC5665D00E42F31 /* README */,
 				33CCA70E1AC351B600013E6F /* BucketFillCommand.cpp */,
 				33CCA70F1AC351B600013E6F /* BucketFillCommand.h */,
 				3330EB4A1ABD95B50012EA2A /* Canvas.cpp */,
